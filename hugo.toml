@@ -15,7 +15,10 @@ author = "仍迟"                                            # 作者
 description = "让无处不在的技术，成为人人平等的权利"                       # 描述
 homeInfoParams = { Title = "仍迟", Content = "知之行之，无负今日" } # / 页面信息
 DateFormat = "2006年01月02日"                               # 日期格式
-disableThemeToggle = true
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/rengchi"
 
 [params.profileMode]
 enabled = true
@@ -28,9 +31,6 @@ imageHeight = 126
 [[params.profileMode.buttons]]
 name = "📝 文章"
 url = "/posts"
-[[params.profileMode.buttons]]
-name = "GitHub"
-url = "https://github.com/rengchi"
 
 [minify]
 disableXML = true
