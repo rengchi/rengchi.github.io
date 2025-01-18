@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>仍迟</title><link>https://rengchi.github.io/</link><description>Recent content on 仍迟</description><generator>Hugo -- 0.141.0</generator><language>zh-cn</language><atom:link href="https://rengchi.github.io/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>仍迟</title>
+    <link>https://rengchi.github.io/</link>
+    <description>Recent content on 仍迟</description>
+    <generator>Hugo -- 0.141.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rengchi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows</title>
+      <link>https://rengchi.github.io/posts/env/windows/dev/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/env/windows/dev/</guid>
+      <description>windows 环境配置</description>
+    </item>
+  </channel>
+</rss>
