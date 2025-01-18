@@ -8,13 +8,32 @@ title = '仍迟'
 theme = "PaperMod"
 
 [params]
+env = 'production'
 defaultTheme = "auto"                                    # 主题模式：auto（自动）、light（亮色）、dark（暗色）
 ShowSearch = true                                        # 显示搜索
 author = "仍迟"                                            # 作者
 description = "让无处不在的技术，成为人人平等的权利"                       # 描述
 homeInfoParams = { Title = "仍迟", Content = "知之行之，无负今日" } # / 页面信息
 DateFormat = "2006年01月02日"                               # 日期格式
+disableThemeToggle = true
 
+[params.profileMode]
+enabled = true
+title = '仍迟'
+subtitle = '知之行之，无负今日'
+imageUrl = 'img/logo.png'
+imageTitle = '霁'
+imageWidth = 126
+imageHeight = 126
+[[params.profileMode.buttons]]
+name = "📝 文章"
+url = "/posts"
+[[params.profileMode.buttons]]
+name = "GitHub"
+url = "https://github.com/rengchi"
+
+[minify]
+disableXML = true
 
 [outputs]
 home = ["HTML", "RSS", "JSON"] # 需要生成 JSON 文件
