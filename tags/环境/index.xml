@@ -16,14 +16,7 @@
       <description>测试服务器环境：Huawei Cloud EulerOS 2.0</description>
     </item>
     <item>
-      <title>Windows 初始化</title>
-      <link>https://rengchi.github.io/posts/env/windows/init/</link>
-      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://rengchi.github.io/posts/env/windows/init/</guid>
-      <description>重装Windows后准备，避免数据全部存储在C盘</description>
-    </item>
-    <item>
-      <title>Windows</title>
+      <title>Windows 开发初始化</title>
       <link>https://rengchi.github.io/posts/env/windows/dev/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://rengchi.github.io/posts/env/windows/dev/</guid>
