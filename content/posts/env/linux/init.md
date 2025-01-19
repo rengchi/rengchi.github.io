@@ -172,7 +172,7 @@ set virtualedit=block,onemore
 
 ```
 cd
-mkdir /env /logs /download /thire /daemon /data /proj
+mkdir /env /logs /download /third /daemon /data /proj
 mkdir /logs/openresty /logs/openresty/proxy_temp /logs/redis /logs/mysql /fate
 mkdir /third/mysql
 mkdir /fate/openresty /fate/openresty/lua /fate/openresty/conf.d /fate/redis /fate/mysql
