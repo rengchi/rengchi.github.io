@@ -1,0 +1,144 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>初始化 | 仍迟</title>
+<meta name=keywords content="windows,环境"><meta name=description content="重装Windows后准备，避免数据全部存储在C盘"><meta name=author content="仍迟"><link rel=canonical href=https://rengchi.github.io/posts/env/windows/init/><link crossorigin=anonymous href=/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as=style><link rel=icon href=https://rengchi.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://rengchi.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://rengchi.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://rengchi.github.io/apple-touch-icon.png><link rel=mask-icon href=https://rengchi.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://rengchi.github.io/posts/env/windows/init/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://rengchi.github.io/posts/env/windows/init/"><meta property="og:site_name" content="仍迟"><meta property="og:title" content="初始化"><meta property="og:description" content="重装Windows后准备，避免数据全部存储在C盘"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-01-19T00:00:00+00:00"><meta property="article:modified_time" content="2025-01-19T00:00:00+00:00"><meta property="article:tag" content="Windows"><meta property="article:tag" content="环境"><meta name=twitter:card content="summary"><meta name=twitter:title content="初始化"><meta name=twitter:description content="重装Windows后准备，避免数据全部存储在C盘"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"📝文章","item":"https://rengchi.github.io/posts/"},{"@type":"ListItem","position":2,"name":"🌞环境","item":"https://rengchi.github.io/posts/env/"},{"@type":"ListItem","position":3,"name":"初始化","item":"https://rengchi.github.io/posts/env/windows/init/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"初始化","name":"初始化","description":"重装Windows后准备，避免数据全部存储在C盘","keywords":["windows","环境"],"articleBody":"写在前面 !注 命令中的 rengchi 为你的 windows 电脑上的 用户名，不一定是 rengchi\nc 盘下的目录并非全部都可以移动，请不要随意使用 mklink /j 移动 c 盘数据/目录\n命令 mkdir \"D:\\data\" 2\u003enull mkdir \"D:\\data\\captura\" 2\u003enull mkdir \"D:\\data\\git\" 2\u003enull mkdir \"D:\\data\\go\" 2\u003enull mkdir \"D:\\data\\mysql\" 2\u003enull mkdir \"D:\\data\\nvm\" 2\u003enull mkdir \"D:\\data\\php\" 2\u003enull mkdir \"D:\\data\\tencent\" 2\u003enull mkdir \"D:\\data\\vue\" 2\u003enull mkdir \"D:\\backup\" 2\u003enull mkdir \"D:\\temp\" 2\u003enull mkdir \"D:\\tmp\" 2\u003enull mkdir \"D:\\env\" 2\u003enull mkdir \"D:\\logs\" 2\u003enull mkdir \"D:\\other\" 2\u003enull mkdir \"D:\\proj\" 2\u003enull mkdir \"D:\\soft\" 2\u003enull mkdir \"D:\\c\\Program Files\\Huawei\" 2\u003enul mkdir \"D:\\c\\Program Files (x86)\\Google\" 2\u003enul mkdir \"D:\\c\\Program Files (x86)\\Huawei\" 2\u003enul mkdir \"D:\\c\\Program Files (x86)\\Tencent\" 2\u003enul mkdir \"D:\\c\\Program Files (x86)\\WXWork\" 2\u003enul mkdir \"D:\\c\\ProgramData\\Huawei\" 2\u003enul mkdir \"D:\\c\\ProgramData\\chocolatey\" 2\u003enul mkdir \"D:\\c\\ProgramData\\ChocolateyHttpCache\" 2\u003enul mklink /j \"C:\\Program Files\\Huawei\" \"D:\\c\\Program Files\\Huawei\" 2\u003enul mklink /j \"C:\\Program Files (x86)\\Google\" \"D:\\c\\Program Files (x86)\\Google\" 2\u003enul mklink /j \"C:\\Program Files (x86)\\Huawei\" \"D:\\c\\Program Files (x86)\\Huawei\" 2\u003enul mklink /j \"C:\\Program Files (x86)\\Tencent\" \"D:\\c\\Program Files (x86)\\Tencent\" 2\u003enul mklink /j \"C:\\Program Files (x86)\\WXWork\" \"D:\\c\\Program Files (x86)\\WXWork\" 2\u003enul mklink /j \"C:\\ProgramData\\Huawei\" \"D:\\c\\ProgramData\\Huawei\" 2\u003enul mklink /j \"C:\\ProgramData\\chocolatey\" \"D:\\c\\ProgramData\\chocolatey\" 2\u003enul mklink /j \"C:\\ProgramData\\ChocolateyHttpCache\" \"D:\\c\\ProgramData\\ChocolateyHttpCache\" 2\u003enul mkdir \"D:\\rengchi\\.chocolatey\" 2\u003enul mkdir \"D:\\rengchi\\.vscode\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\.chocolatey\" \"D:\\rengchi\\.chocolatey\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\.vscode\" \"D:\\rengchi\\.vscode\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Adobe\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\another-redis-desktop-manager-updater\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\apifox-updater\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\CEF\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\CodeArtsTemp\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Composer\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Deloyment\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\golangci-lint\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Google\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\gopls\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\hugo_cache\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\npm-cache\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\OfficePLUS\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\PDFgear\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\pnpm\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\pnpm-cache\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\pnpm-state\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Programs\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Sublime Text\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Temp\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Tencent\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\wxworkweb\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\xmind-updater\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\xwalk\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\Yarn\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\zig\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\微信开发者工具\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\ChromeExtensionCache\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Local\\VirtualStore\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Adobe\" \"D:\\rengchi\\AppData\\Local\\Adobe\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\another-redis-desktop-manager-updater\" \"D:\\rengchi\\AppData\\Local\\another-redis-desktop-manager-updater\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\apifox-updater\" \"D:\\rengchi\\AppData\\Local\\apifox-updater\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\CEF\" \"D:\\rengchi\\AppData\\Local\\CEF\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\CodeArtsTemp\" \"D:\\rengchi\\AppData\\Local\\CodeArtsTemp\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Composer\" \"D:\\rengchi\\AppData\\Local\\Composer\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Deloyment\" \"D:\\rengchi\\AppData\\Local\\Deloyment\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\golangci-lint\" \"D:\\rengchi\\AppData\\Local\\golangci-lint\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Google\" \"D:\\rengchi\\AppData\\Local\\Google\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\gopls\" \"D:\\rengchi\\AppData\\Local\\gopls\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\hugo_cache\" \"D:\\rengchi\\AppData\\Local\\hugo_cache\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\npm-cache\" \"D:\\rengchi\\AppData\\Local\\npm-cache\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\OfficePLUS\" \"D:\\rengchi\\AppData\\Local\\OfficePLUS\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\PDFgear\" \"D:\\rengchi\\AppData\\Local\\PDFgear\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\pnpm\" \"D:\\rengchi\\AppData\\Local\\pnpm\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\pnpm-cache\" \"D:\\rengchi\\AppData\\Local\\pnpm-cache\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\pnpm-state\" \"D:\\rengchi\\AppData\\Local\\pnpm-state\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Programs\" \"D:\\rengchi\\AppData\\Local\\Programs\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Sublime Text\" \"D:\\rengchi\\AppData\\Local\\Sublime Text\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Temp\" \"D:\\rengchi\\AppData\\Local\\Temp\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Tencent\" \"D:\\rengchi\\AppData\\Local\\Tencent\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\wxworkweb\" \"D:\\rengchi\\AppData\\Local\\wxworkweb\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\xmind-updater\" \"D:\\rengchi\\AppData\\Local\\xmind-updater\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\xwalk\" \"D:\\rengchi\\AppData\\Local\\xwalk\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\Yarn\" \"D:\\rengchi\\AppData\\Local\\Yarn\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\zig\" \"D:\\rengchi\\AppData\\Local\\zig\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\微信开发者工具\" \"D:\\rengchi\\AppData\\Local\\微信开发者工具\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\ChromeExtensionCache\" \"D:\\rengchi\\AppData\\Local\\ChromeExtensionCache\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Local\\VirtualStore\" \"D:\\rengchi\\AppData\\Local\\VirtualStore\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\360Safe\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Adobe\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\another-redis-desktop-manager\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\apifox\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Captura\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Code\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Composer\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\go\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Google\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\gopls\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\SQLyog\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Sublime Text\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Tencent\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\VoipNNModel\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\WXDrive\" 2\u003enul mkdir \"D:\\rengchi\\AppData\\Roaming\\Xmind\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\360Safe\" \"D:\\rengchi\\AppData\\Roaming\\360Safe\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Adobe\" \"D:\\rengchi\\AppData\\Roaming\\Adobe\" mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\another-redis-desktop-manager\" \"D:\\rengchi\\AppData\\Roaming\\another-redis-desktop-manager\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\apifox\" \"D:\\rengchi\\AppData\\Roaming\\apifox\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Captura\" \"D:\\rengchi\\AppData\\Roaming\\Captura\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Code\" \"D:\\rengchi\\AppData\\Roaming\\Code\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Composer\" \"D:\\rengchi\\AppData\\Roaming\\Composer\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\go\" \"D:\\rengchi\\AppData\\Roaming\\go\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Google\" \"D:\\rengchi\\AppData\\Roaming\\Google\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\gopls\" \"D:\\rengchi\\AppData\\Roaming\\gopls\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\SQLyog\" \"D:\\rengchi\\AppData\\Roaming\\SQLyog\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Sublime Text\" \"D:\\rengchi\\AppData\\Roaming\\Sublime Text\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Tencent\" \"D:\\rengchi\\AppData\\Roaming\\Tencent\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\VoipNNModel\" \"D:\\rengchi\\AppData\\Roaming\\VoipNNModel\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\WXDrive\" \"D:\\rengchi\\AppData\\Roaming\\WXDrive\" 2\u003enul mklink /j \"C:\\Users\\rengchi\\AppData\\Roaming\\Xmind\" \"D:\\rengchi\\AppData\\Roaming\\Xmind\" 2\u003enul ","wordCount":"540","inLanguage":"en","datePublished":"2025-01-19T00:00:00Z","dateModified":"2025-01-19T00:00:00Z","author":{"@type":"Person","name":"仍迟"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://rengchi.github.io/posts/env/windows/init/"},"publisher":{"@type":"Organization","name":"仍迟","logo":{"@type":"ImageObject","url":"https://rengchi.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://rengchi.github.io/ accesskey=h title="仍迟 (Alt + H)">仍迟</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://rengchi.github.io/archives/ title=🌠归档><span>🌠归档</span></a></li><li><a href=https://rengchi.github.io/search/ title=🔍搜索><span>🔍搜索</span></a></li><li><a href=https://rengchi.github.io/tags/ title=📌标签><span>📌标签</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">初始化</h1><div class=post-description>重装Windows后准备，避免数据全部存储在C盘</div><div class=post-meta><span title='2025-01-19 00:00:00 +0000 UTC'>2025年01月19日</span>&nbsp;·&nbsp;仍迟</div></header><div class=post-content><h2 id=写在前面>写在前面<a hidden class=anchor aria-hidden=true href=#写在前面>#</a></h2><blockquote><p><strong><em>!注</em></strong> 命令中的 <code>rengchi</code> 为你的 <code>windows</code> 电脑上的 <code>用户名</code>，不一定是 <code>rengchi</code></p></blockquote><blockquote><p><strong><em>c 盘下的目录并非全部都可以移动，请不要随意使用 <code>mklink /j</code> 移动 c 盘数据/目录</em></strong></p></blockquote><h2 id=命令>命令<a hidden class=anchor aria-hidden=true href=#命令>#</a></h2><pre tabindex=0><code>mkdir &#34;D:\data&#34; 2&gt;null
+mkdir &#34;D:\data\captura&#34; 2&gt;null
+mkdir &#34;D:\data\git&#34; 2&gt;null
+mkdir &#34;D:\data\go&#34; 2&gt;null
+mkdir &#34;D:\data\mysql&#34; 2&gt;null
+mkdir &#34;D:\data\nvm&#34; 2&gt;null
+mkdir &#34;D:\data\php&#34; 2&gt;null
+mkdir &#34;D:\data\tencent&#34; 2&gt;null
+mkdir &#34;D:\data\vue&#34; 2&gt;null
+mkdir &#34;D:\backup&#34; 2&gt;null
+mkdir &#34;D:\temp&#34; 2&gt;null
+mkdir &#34;D:\tmp&#34; 2&gt;null
+mkdir &#34;D:\env&#34; 2&gt;null
+mkdir &#34;D:\logs&#34; 2&gt;null
+mkdir &#34;D:\other&#34; 2&gt;null
+mkdir &#34;D:\proj&#34; 2&gt;null
+mkdir &#34;D:\soft&#34; 2&gt;null
+
+
+mkdir &#34;D:\c\Program Files\Huawei&#34; 2&gt;nul
+mkdir &#34;D:\c\Program Files (x86)\Google&#34; 2&gt;nul
+mkdir &#34;D:\c\Program Files (x86)\Huawei&#34; 2&gt;nul
+mkdir &#34;D:\c\Program Files (x86)\Tencent&#34; 2&gt;nul
+mkdir &#34;D:\c\Program Files (x86)\WXWork&#34; 2&gt;nul
+mkdir &#34;D:\c\ProgramData\Huawei&#34; 2&gt;nul
+mkdir &#34;D:\c\ProgramData\chocolatey&#34; 2&gt;nul
+mkdir &#34;D:\c\ProgramData\ChocolateyHttpCache&#34; 2&gt;nul
+
+mklink /j &#34;C:\Program Files\Huawei&#34; &#34;D:\c\Program Files\Huawei&#34; 2&gt;nul
+mklink /j &#34;C:\Program Files (x86)\Google&#34; &#34;D:\c\Program Files (x86)\Google&#34; 2&gt;nul
+mklink /j &#34;C:\Program Files (x86)\Huawei&#34; &#34;D:\c\Program Files (x86)\Huawei&#34; 2&gt;nul
+mklink /j &#34;C:\Program Files (x86)\Tencent&#34; &#34;D:\c\Program Files (x86)\Tencent&#34; 2&gt;nul
+mklink /j &#34;C:\Program Files (x86)\WXWork&#34; &#34;D:\c\Program Files (x86)\WXWork&#34; 2&gt;nul
+mklink /j &#34;C:\ProgramData\Huawei&#34; &#34;D:\c\ProgramData\Huawei&#34; 2&gt;nul
+mklink /j &#34;C:\ProgramData\chocolatey&#34; &#34;D:\c\ProgramData\chocolatey&#34; 2&gt;nul
+mklink /j &#34;C:\ProgramData\ChocolateyHttpCache&#34; &#34;D:\c\ProgramData\ChocolateyHttpCache&#34; 2&gt;nul
+
+mkdir &#34;D:\rengchi\.chocolatey&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\.vscode&#34; 2&gt;nul
+
+mklink /j &#34;C:\Users\rengchi\.chocolatey&#34; &#34;D:\rengchi\.chocolatey&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\.vscode&#34; &#34;D:\rengchi\.vscode&#34; 2&gt;nul
+
+mkdir &#34;D:\rengchi\AppData\Local\Adobe&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\another-redis-desktop-manager-updater&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\apifox-updater&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\CEF&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\CodeArtsTemp&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Composer&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Deloyment&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\golangci-lint&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Google&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\gopls&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\hugo_cache&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\npm-cache&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\OfficePLUS&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\PDFgear&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\pnpm&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\pnpm-cache&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\pnpm-state&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Programs&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Sublime Text&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Temp&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Tencent&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\wxworkweb&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\xmind-updater&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\xwalk&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\Yarn&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\zig&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\微信开发者工具&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\ChromeExtensionCache&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Local\VirtualStore&#34; 2&gt;nul
+
+
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Adobe&#34; &#34;D:\rengchi\AppData\Local\Adobe&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\another-redis-desktop-manager-updater&#34; &#34;D:\rengchi\AppData\Local\another-redis-desktop-manager-updater&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\apifox-updater&#34; &#34;D:\rengchi\AppData\Local\apifox-updater&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\CEF&#34; &#34;D:\rengchi\AppData\Local\CEF&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\CodeArtsTemp&#34; &#34;D:\rengchi\AppData\Local\CodeArtsTemp&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Composer&#34; &#34;D:\rengchi\AppData\Local\Composer&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Deloyment&#34; &#34;D:\rengchi\AppData\Local\Deloyment&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\golangci-lint&#34; &#34;D:\rengchi\AppData\Local\golangci-lint&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Google&#34; &#34;D:\rengchi\AppData\Local\Google&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\gopls&#34; &#34;D:\rengchi\AppData\Local\gopls&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\hugo_cache&#34; &#34;D:\rengchi\AppData\Local\hugo_cache&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\npm-cache&#34; &#34;D:\rengchi\AppData\Local\npm-cache&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\OfficePLUS&#34; &#34;D:\rengchi\AppData\Local\OfficePLUS&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\PDFgear&#34; &#34;D:\rengchi\AppData\Local\PDFgear&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\pnpm&#34; &#34;D:\rengchi\AppData\Local\pnpm&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\pnpm-cache&#34; &#34;D:\rengchi\AppData\Local\pnpm-cache&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\pnpm-state&#34; &#34;D:\rengchi\AppData\Local\pnpm-state&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Programs&#34; &#34;D:\rengchi\AppData\Local\Programs&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Sublime Text&#34; &#34;D:\rengchi\AppData\Local\Sublime Text&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Temp&#34; &#34;D:\rengchi\AppData\Local\Temp&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Tencent&#34; &#34;D:\rengchi\AppData\Local\Tencent&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\wxworkweb&#34; &#34;D:\rengchi\AppData\Local\wxworkweb&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\xmind-updater&#34; &#34;D:\rengchi\AppData\Local\xmind-updater&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\xwalk&#34; &#34;D:\rengchi\AppData\Local\xwalk&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\Yarn&#34; &#34;D:\rengchi\AppData\Local\Yarn&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\zig&#34; &#34;D:\rengchi\AppData\Local\zig&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\微信开发者工具&#34; &#34;D:\rengchi\AppData\Local\微信开发者工具&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\ChromeExtensionCache&#34; &#34;D:\rengchi\AppData\Local\ChromeExtensionCache&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Local\VirtualStore&#34; &#34;D:\rengchi\AppData\Local\VirtualStore&#34; 2&gt;nul
+
+mkdir &#34;D:\rengchi\AppData\Roaming\360Safe&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Adobe&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\another-redis-desktop-manager&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\apifox&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Captura&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Code&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Composer&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\go&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Google&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\gopls&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\SQLyog&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Sublime Text&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Tencent&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\VoipNNModel&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\WXDrive&#34; 2&gt;nul
+mkdir &#34;D:\rengchi\AppData\Roaming\Xmind&#34; 2&gt;nul
+
+
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\360Safe&#34; &#34;D:\rengchi\AppData\Roaming\360Safe&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Adobe&#34; &#34;D:\rengchi\AppData\Roaming\Adobe&#34;
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\another-redis-desktop-manager&#34; &#34;D:\rengchi\AppData\Roaming\another-redis-desktop-manager&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\apifox&#34; &#34;D:\rengchi\AppData\Roaming\apifox&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Captura&#34; &#34;D:\rengchi\AppData\Roaming\Captura&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Code&#34; &#34;D:\rengchi\AppData\Roaming\Code&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Composer&#34; &#34;D:\rengchi\AppData\Roaming\Composer&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\go&#34; &#34;D:\rengchi\AppData\Roaming\go&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Google&#34; &#34;D:\rengchi\AppData\Roaming\Google&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\gopls&#34; &#34;D:\rengchi\AppData\Roaming\gopls&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\SQLyog&#34; &#34;D:\rengchi\AppData\Roaming\SQLyog&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Sublime Text&#34; &#34;D:\rengchi\AppData\Roaming\Sublime Text&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Tencent&#34; &#34;D:\rengchi\AppData\Roaming\Tencent&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\VoipNNModel&#34; &#34;D:\rengchi\AppData\Roaming\VoipNNModel&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\WXDrive&#34; &#34;D:\rengchi\AppData\Roaming\WXDrive&#34; 2&gt;nul
+mklink /j &#34;C:\Users\rengchi\AppData\Roaming\Xmind&#34; &#34;D:\rengchi\AppData\Roaming\Xmind&#34; 2&gt;nul
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://rengchi.github.io/tags/windows/>Windows</a></li><li><a href=https://rengchi.github.io/tags/%E7%8E%AF%E5%A2%83/>环境</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2025 <a href=https://rengchi.github.io/>仍迟</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

@@ -6,8 +6,15 @@
     <description>Recent content in 🌞环境 on 仍迟</description>
     <generator>Hugo -- 0.141.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rengchi.github.io/posts/env/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初始化</title>
+      <link>https://rengchi.github.io/posts/env/windows/init/</link>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/env/windows/init/</guid>
+      <description>重装Windows后准备，避免数据全部存储在C盘</description>
+    </item>
     <item>
       <title>Windows</title>
       <link>https://rengchi.github.io/posts/env/windows/dev/</link>

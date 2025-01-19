@@ -6,6 +6,50 @@
     <description>Recent content in 🌈技术 on 仍迟</description>
     <generator>Hugo -- 0.141.0</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rengchi.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://rengchi.github.io/posts/tech/git/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/git/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/zh/v2&#34;&gt;&lt;strong&gt;&lt;em&gt;&lt;code&gt;官方文档&lt;/code&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;裸仓库&#34;&gt;裸仓库&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE&#34;&gt;服务器上的 Git&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设置默认分支为 &lt;code&gt;main&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:\&amp;gt; git config --global init.defaultBranch main
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;初始一个测试仓库 &lt;code&gt;test.git&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:\data\git\repo&amp;gt; git init --bare test.git
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;测试&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:\data\git\repo&amp;gt; git clone D:/data/git/repo/test.git D:/data/git/repo/test
+Cloning into &amp;#39;D:/data/git/repo/test&amp;#39;...
+warning: You appear to have cloned an empty repository.
+done.
+PS D:\data\git\repo&amp;gt; cd .\test\
+PS D:\data\git\repo\test&amp;gt; ls
+PS D:\data\git\repo\test&amp;gt; echo &amp;#34;Hello, Git&amp;#34; &amp;gt; file.txt
+PS D:\data\git\repo\test&amp;gt; git add file.txt
+PS D:\data\git\repo\test&amp;gt; git commit -m &amp;#34;Add file.txt&amp;#34;
+[main (root-commit) ac38950] Add file.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file.txt
+PS D:\data\git\repo\test&amp;gt; git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 240 bytes | 240.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To D:/data/git/repo/test.git
+ * [new branch]      main -&amp;gt; main
+PS D:\data\git\repo\test&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
+&lt;h2 id=&#34;tag&#34;&gt;tag&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE&#34;&gt;2.6 打标签&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

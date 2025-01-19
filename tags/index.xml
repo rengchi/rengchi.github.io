@@ -6,20 +6,34 @@
     <description>Recent content in 📌标签 on 仍迟</description>
     <generator>Hugo -- 0.141.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rengchi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows</title>
       <link>https://rengchi.github.io/tags/windows/</link>
-      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://rengchi.github.io/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>环境</title>
       <link>https://rengchi.github.io/tags/%E7%8E%AF%E5%A2%83/</link>
-      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://rengchi.github.io/tags/%E7%8E%AF%E5%A2%83/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://rengchi.github.io/tags/git/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>技术</title>
+      <link>https://rengchi.github.io/tags/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/tags/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
   </channel>
