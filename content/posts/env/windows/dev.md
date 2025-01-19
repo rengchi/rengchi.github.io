@@ -15,14 +15,15 @@ description: windows 环境配置
 
 ```
 go env -w GO111MODULE=on
-go env -w GOCACHE=D:\log\go\go-build
+go env -w GOCACHE=D:\logs\go\go-build
+go env -w GOMODCACHE=D:\logs\go\pkg\mod
 go env -w GOPROXY=https://proxy.golang.com.cn,direct
 go env -w GOPATH=D:\proj\go
 ```
 
 # mysql
 
-> 需要创建：`D:\log\mysql` `D:\data\mysql` 示例： mysql-8.0.40
+> 需要创建：`D:\logs\mysql` `D:\data\mysql` 示例： mysql-8.0.40
 
 [mysql 下载](https://dev.mysql.com/downloads/mysql/)
 
@@ -55,11 +56,11 @@ innodb_flush_method=normal
 innodb_redo_log_capacity=268435456
 
 # 日志
-log_error=D:\\log\\mysql\\error.log
+log_error=D:\\logs\\mysql\\error.log
 
 # 记录慢查询
 slow_query_log=1
-slow_query_log_file=D:\\log\\mysql\\slow.log
+slow_query_log_file=D:\\logs\\mysql\\slow.log
 
 # 其他配置
 tmp_table_size=64M
@@ -251,8 +252,8 @@ server {
 
 
     # 配置错误日志和访问日志
-    error_log D:\\log\\php\\demo-error.log;
-    access_log D:\\log\\php\\demo-access.log;
+    error_log D:\\logs\\php\\demo-error.log;
+    access_log D:\\logs\\php\\demo-access.log;
 }
 ```
 
