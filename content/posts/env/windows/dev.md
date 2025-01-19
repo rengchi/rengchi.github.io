@@ -103,6 +103,11 @@ D:\env\mysql\bin> .\mysqld.exe --initialize --console
 # 安装到服务中 --install [自定义服务名称]，可以在服务中设置开机自动启动
 D:\env\mysql\bin> .\mysqld.exe --install mysqld --defaults-file="D:\env\mysql\my.ini"
 
+# 启动
+D:\env\mysql\bin> net start mysqld
+mysqld 服务正在启动 .
+mysqld 服务已经启动成功。
+
 # 连接 MySQL 并初始化密码
 D:\env\mysql\bin>.\mysql.exe -u root -P 3306 -p
 Enter password: 这里输入上面的密码

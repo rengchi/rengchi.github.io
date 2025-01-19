@@ -1,5 +1,5 @@
 ---
-title: '初始化'
+title: 'Windows 初始化'
 date: 2025-01-19
 tags: ['windows', '环境']
 description: '重装Windows后准备，避免数据全部存储在C盘'
