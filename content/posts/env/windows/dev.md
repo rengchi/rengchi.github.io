@@ -1,5 +1,5 @@
 ---
-title: 'Windows'
+title: 'Windows 开发初始化'
 date: 2025-01-18
 tags: ['环境', 'windows']
 description: windows 环境配置

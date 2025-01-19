@@ -1,7 +1,7 @@
 ---
-title: 'Windows 初始化'
+title: 'Windows 重装相关'
 date: 2025-01-19
-tags: ['windows', '环境']
+tags: ['windows']
 description: '重装Windows后准备，避免数据全部存储在C盘'
 ---
 
@@ -34,6 +34,7 @@ mkdir "D:\soft" 2>null
 
 
 mkdir "D:\c\Program Files\Huawei" 2>nul
+mkdir "D:\c\Program Files\Google" 2>nul
 mkdir "D:\c\Program Files (x86)\Google" 2>nul
 mkdir "D:\c\Program Files (x86)\Huawei" 2>nul
 mkdir "D:\c\Program Files (x86)\Tencent" 2>nul
@@ -41,8 +42,10 @@ mkdir "D:\c\Program Files (x86)\WXWork" 2>nul
 mkdir "D:\c\ProgramData\Huawei" 2>nul
 mkdir "D:\c\ProgramData\chocolatey" 2>nul
 mkdir "D:\c\ProgramData\ChocolateyHttpCache" 2>nul
+mkdir "D:\c\ProgramData\Tencent" 2>nul
 
 mklink /j "C:\Program Files\Huawei" "D:\c\Program Files\Huawei" 2>nul
+mklink /j "C:\Program Files\Google" "D:\c\Program Files\Google"
 mklink /j "C:\Program Files (x86)\Google" "D:\c\Program Files (x86)\Google" 2>nul
 mklink /j "C:\Program Files (x86)\Huawei" "D:\c\Program Files (x86)\Huawei" 2>nul
 mklink /j "C:\Program Files (x86)\Tencent" "D:\c\Program Files (x86)\Tencent" 2>nul
@@ -50,12 +53,15 @@ mklink /j "C:\Program Files (x86)\WXWork" "D:\c\Program Files (x86)\WXWork" 2>nu
 mklink /j "C:\ProgramData\Huawei" "D:\c\ProgramData\Huawei" 2>nul
 mklink /j "C:\ProgramData\chocolatey" "D:\c\ProgramData\chocolatey" 2>nul
 mklink /j "C:\ProgramData\ChocolateyHttpCache" "D:\c\ProgramData\ChocolateyHttpCache" 2>nul
+mklink /j "C:\ProgramData\Tencent" "D:\c\ProgramData\Tencent"
 
 mkdir "D:\rengchi\.chocolatey" 2>nul
 mkdir "D:\rengchi\.vscode" 2>nul
+mkdir "D:\rengchi\.codearts" 2>nul
 
 mklink /j "C:\Users\rengchi\.chocolatey" "D:\rengchi\.chocolatey" 2>nul
 mklink /j "C:\Users\rengchi\.vscode" "D:\rengchi\.vscode" 2>nul
+mklink /j "C:\Users\rengchi\.codearts" "D:\rengchi\.codearts" 2>null
 
 mkdir "D:\rengchi\AppData\Local\Adobe" 2>nul
 mkdir "D:\rengchi\AppData\Local\another-redis-desktop-manager-updater" 2>nul
@@ -86,6 +92,7 @@ mkdir "D:\rengchi\AppData\Local\zig" 2>nul
 mkdir "D:\rengchi\AppData\Local\微信开发者工具" 2>nul
 mkdir "D:\rengchi\AppData\Local\ChromeExtensionCache" 2>nul
 mkdir "D:\rengchi\AppData\Local\VirtualStore" 2>nul
+mkdir "D:\rengchi\AppData\Local\Huawei" 2>nul
 
 
 mklink /j "C:\Users\rengchi\AppData\Local\Adobe" "D:\rengchi\AppData\Local\Adobe" 2>nul
@@ -117,6 +124,7 @@ mklink /j "C:\Users\rengchi\AppData\Local\zig" "D:\rengchi\AppData\Local\zig" 2>
 mklink /j "C:\Users\rengchi\AppData\Local\微信开发者工具" "D:\rengchi\AppData\Local\微信开发者工具" 2>nul
 mklink /j "C:\Users\rengchi\AppData\Local\ChromeExtensionCache" "D:\rengchi\AppData\Local\ChromeExtensionCache" 2>nul
 mklink /j "C:\Users\rengchi\AppData\Local\VirtualStore" "D:\rengchi\AppData\Local\VirtualStore" 2>nul
+mklink /j "C:\Users\rengchi\AppData\Local\Huawei" "D:\rengchi\AppData\Local\Huawei"
 
 mkdir "D:\rengchi\AppData\Roaming\360Safe" 2>nul
 mkdir "D:\rengchi\AppData\Roaming\Adobe" 2>nul
@@ -134,6 +142,7 @@ mkdir "D:\rengchi\AppData\Roaming\Tencent" 2>nul
 mkdir "D:\rengchi\AppData\Roaming\VoipNNModel" 2>nul
 mkdir "D:\rengchi\AppData\Roaming\WXDrive" 2>nul
 mkdir "D:\rengchi\AppData\Roaming\Xmind" 2>nul
+mkdir "D:\rengchi\AppData\Roaming\Huawei" 2>nul
 
 
 mklink /j "C:\Users\rengchi\AppData\Roaming\360Safe" "D:\rengchi\AppData\Roaming\360Safe" 2>nul
@@ -152,4 +161,5 @@ mklink /j "C:\Users\rengchi\AppData\Roaming\Tencent" "D:\rengchi\AppData\Roaming
 mklink /j "C:\Users\rengchi\AppData\Roaming\VoipNNModel" "D:\rengchi\AppData\Roaming\VoipNNModel" 2>nul
 mklink /j "C:\Users\rengchi\AppData\Roaming\WXDrive" "D:\rengchi\AppData\Roaming\WXDrive" 2>nul
 mklink /j "C:\Users\rengchi\AppData\Roaming\Xmind" "D:\rengchi\AppData\Roaming\Xmind" 2>nul
+mklink /j "C:\Users\rengchi\AppData\Roaming\Huawei" "D:\rengchi\AppData\Roaming\Huawei"
 ```
