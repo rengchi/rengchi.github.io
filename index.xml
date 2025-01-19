@@ -9,7 +9,14 @@
     <lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rengchi.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>初始化</title>
+      <title>Linux 初始化</title>
+      <link>https://rengchi.github.io/posts/env/linux/init/</link>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/env/linux/init/</guid>
+      <description>测试服务器环境：Huawei Cloud EulerOS 2.0</description>
+    </item>
+    <item>
+      <title>Windows 初始化</title>
       <link>https://rengchi.github.io/posts/env/windows/init/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://rengchi.github.io/posts/env/windows/init/</guid>
