@@ -143,6 +143,7 @@ mkdir "D:\rengchi\AppData\Roaming\VoipNNModel" 2>nul
 mkdir "D:\rengchi\AppData\Roaming\WXDrive" 2>nul
 mkdir "D:\rengchi\AppData\Roaming\Xmind" 2>nul
 mkdir "D:\rengchi\AppData\Roaming\Huawei" 2>nul
+mkdir "D:\rengchi\AppData\Roaming\CodeArts" 2>nul
 
 
 mklink /j "C:\Users\rengchi\AppData\Roaming\360Safe" "D:\rengchi\AppData\Roaming\360Safe" 2>nul
@@ -162,4 +163,5 @@ mklink /j "C:\Users\rengchi\AppData\Roaming\VoipNNModel" "D:\rengchi\AppData\Roa
 mklink /j "C:\Users\rengchi\AppData\Roaming\WXDrive" "D:\rengchi\AppData\Roaming\WXDrive" 2>nul
 mklink /j "C:\Users\rengchi\AppData\Roaming\Xmind" "D:\rengchi\AppData\Roaming\Xmind" 2>nul
 mklink /j "C:\Users\rengchi\AppData\Roaming\Huawei" "D:\rengchi\AppData\Roaming\Huawei"
+mklink /j "C:\Users\rengchi\AppData\Roaming\CodeArts" "D:\rengchi\AppData\Roaming\CodeArts" 2>null
 ```
