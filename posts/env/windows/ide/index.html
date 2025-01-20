@@ -1,0 +1,109 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>IDE | 仍迟</title>
+<meta name=keywords content="环境,windows,ide"><meta name=description content="编辑器配置相关"><meta name=author content="仍迟"><link rel=canonical href=https://rengchi.github.io/posts/env/windows/ide/><link crossorigin=anonymous href=/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as=style><link rel=icon href=https://rengchi.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://rengchi.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://rengchi.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://rengchi.github.io/apple-touch-icon.png><link rel=mask-icon href=https://rengchi.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://rengchi.github.io/posts/env/windows/ide/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://rengchi.github.io/posts/env/windows/ide/"><meta property="og:site_name" content="仍迟"><meta property="og:title" content="IDE"><meta property="og:description" content="编辑器配置相关"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-01-20T00:00:00+00:00"><meta property="article:modified_time" content="2025-01-20T00:00:00+00:00"><meta property="article:tag" content="环境"><meta property="article:tag" content="Windows"><meta property="article:tag" content="Ide"><meta name=twitter:card content="summary"><meta name=twitter:title content="IDE"><meta name=twitter:description content="编辑器配置相关"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"📝文章","item":"https://rengchi.github.io/posts/"},{"@type":"ListItem","position":2,"name":"🌞环境","item":"https://rengchi.github.io/posts/env/"},{"@type":"ListItem","position":3,"name":"IDE","item":"https://rengchi.github.io/posts/env/windows/ide/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"IDE","name":"IDE","description":"编辑器配置相关","keywords":["环境","windows","ide"],"articleBody":"vscode settings.json\n扩展 Chinese (Simplified) (简体中文) [Microsoft] Even Better TOML [tamasfe] GitHub Actions [GitHub] Go [Go Team at Google] Go struct tag liuchao HTML CSS Support [ecmel] JavaScript(ES6) code snippets [charalampos karypidis] Material Icon Theme [Philipp Kief] PHP Intelephense [Ben Mewburn] Prettier - Code formatter [Prettier] Vue - Official [Vue]\n{ // 工作台设置 \"workbench.iconTheme\": \"material-icon-theme\", // material-icon-theme 主题 \"window.zoomLevel\": 1.2, // 默认放大窗口 1.2倍 // 编辑器设置 \"editor.mouseWheelZoom\": true, // 鼠标滚轮缩放 \"editor.cursorBlinking\": \"smooth\", // 启用平滑光标呼吸效果 \"editor.cursorSmoothCaretAnimation\": \"explicit\", // 启用光标平滑动画 \"editor.formatOnSave\": true, // 启用保存时自动格式化代码 \"editor.snippetSuggestions\": \"inline\", // 优化代码片段建议，插入代码时显示 \"editor.minimap.enabled\": false, // 禁用缩略图 \"editor.autoClosingBrackets\": \"languageDefined\", // 根据语言定义自动闭合括号 \"editor.formatOnPaste\": true, // 粘贴时自动格式化 // 启用 IntelliSense 自动补全 \"editor.suggestOnTriggerCharacters\": true, // 启用触发字符时的自动补全 \"editor.quickSuggestions\": { \"other\": true, \"comments\": true, \"strings\": true }, // 启用代码和字符串的自动补全 \"editor.parameterHints.enabled\": true, // 启用函数参数提示 // 启用代码跳转功能 \"editor.gotoLocation.multipleDefinitions\": \"peek\", // 修改为单独的设置 \"editor.gotoLocation.multipleImplementations\": \"peek\", // 修改为单独的设置 \"editor.fontFamily\": \"'Comic Sans MS', monospace\", // 默认字体 \"editor.letterSpacing\": 1, // 字符间距 // 自动保存设置 \"files.autoSave\": \"afterDelay\", // 延迟后自动保存文件 \"files.autoSaveDelay\": 1000, // 自动保存间隔 // 安全性设置 \"security.workspace.trust.untrustedFiles\": \"open\", // 对于未信任的工作区文件选择打开 // Prettier 代码格式化设置 \"prettier.tabWidth\": 4, // Prettier 格式化时使用 4 个空格缩进 \"prettier.singleQuote\": true, // Prettier 使用单引号 // Go 扩展的设置（确保你已经安装了 Go 扩展） \"go.useLanguageServer\": true, // 启用 gopls 语言服务器 \"gopls\": { \"usePlaceholders\": true, // 在补全函数时插入占位符 \"staticcheck\": true, // 启用 staticcheck 分析工具 \"analyses\": { \"unusedparams\": true, // 启用未使用参数的检查 \"shadow\": true // 启用变量遮蔽的检查 } }, // Go 格式化和代码整理设置 \"go.formatTool\": \"goimports\", // 使用 goimports 格式化代码，并自动整理导入 \"go.vetOnSave\": \"package\", // 保存时运行 go vet 检查，范围为当前包 // Linter 设置，使用 GolangCI-Lint 工具 \"go.lintTool\": \"golangci-lint\", // 配置 GolangCI-Lint 作为 Linter \"go.lintFlags\": [ \"--fast\" // 启用快速 lint 检查，减少执行时间 ], \"go.lintOnSave\": \"package\", // 保存时自动运行 GolangCI-Lint 对当前包进行检查 // Go 扩展的测试设置 \"go.testOnSave\": true, // 保存时自动运行测试 \"go.testFlags\": [ \"-v\" ], \"[jsonc]\": { \"editor.defaultFormatter\": \"vscode.json-language-features\" // 测试时使用 -v，显示详细信息 }, // go struct teg \"go-struct-tag.cases\": [ \"snake\", \"camel\" ], // JavaScript 相关配置 \"[javascript]\": { \"editor.defaultFormatter\": \"esbenp.prettier-vscode\", // 使用 Prettier 格式化 JavaScript \"editor.formatOnSave\": true, // 保存时自动格式化 \"editor.suggestOnTriggerCharacters\": true, // 启用触发字符时的自动补全 \"editor.quickSuggestions\": { \"other\": true, \"comments\": true, \"strings\": true }, // 启用代码和字符串的自动补全 \"editor.snippetSuggestions\": \"inline\", // 显示代码片段建议 \"editor.parameterHints.enabled\": true // 启用函数参数提示 }, // CSS 相关配置 \"[css]\": { \"editor.defaultFormatter\": \"esbenp.prettier-vscode\", // 使用 Prettier 格式化 CSS \"editor.formatOnSave\": true, // 保存时自动格式化 \"editor.suggestOnTriggerCharacters\": true, // 启用触发字符时的自动补全 \"editor.quickSuggestions\": { \"other\": true, \"comments\": true, \"strings\": true }, // 启用代码和字符串的自动补全 \"editor.snippetSuggestions\": \"inline\", // 显示代码片段建议 \"editor.parameterHints.enabled\": true // 启用函数参数提示 }, // Emmet 配置：使其适用于 JavaScript 和 TypeScript \"emmet.includeLanguages\": { \"javascript\": \"javascriptreact\", // 对 React 使用 Emmet 扩展 \"typescript\": \"typescriptreact\" // 对 TypeScript 使用 Emmet 扩展 }, // 启用自动补全（JS 和 CSS） \"javascript.suggest.autoImports\": true, // 启用自动导入建议 \"javascript.suggest.enabled\": true, // 启用 JS 自动补全 \"typescript.suggest.autoImports\": true, // 启用 TypeScript 的自动导入建议 \"typescript.suggest.enabled\": true, // 启用 TypeScript 自动补全 } ","wordCount":"409","inLanguage":"en","datePublished":"2025-01-20T00:00:00Z","dateModified":"2025-01-20T00:00:00Z","author":{"@type":"Person","name":"仍迟"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://rengchi.github.io/posts/env/windows/ide/"},"publisher":{"@type":"Organization","name":"仍迟","logo":{"@type":"ImageObject","url":"https://rengchi.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://rengchi.github.io/ accesskey=h title="仍迟 (Alt + H)">仍迟</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://rengchi.github.io/archives/ title=🌠归档><span>🌠归档</span></a></li><li><a href=https://rengchi.github.io/search/ title=🔍搜索><span>🔍搜索</span></a></li><li><a href=https://rengchi.github.io/tags/ title=📌标签><span>📌标签</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">IDE</h1><div class=post-description>编辑器配置相关</div><div class=post-meta><span title='2025-01-20 00:00:00 +0000 UTC'>2025年01月20日</span>&nbsp;·&nbsp;仍迟</div></header><div class=post-content><h1 id=vscode>vscode<a hidden class=anchor aria-hidden=true href=#vscode>#</a></h1><blockquote><p>settings.json</p></blockquote><h2 id=扩展>扩展<a hidden class=anchor aria-hidden=true href=#扩展>#</a></h2><p><code>Chinese (Simplified) (简体中文) [Microsoft]</code> <code>Even Better TOML [tamasfe]</code> <code>GitHub Actions [GitHub]</code> <code>Go [Go Team at Google]</code> <code>Go struct tag liuchao</code> <code>HTML CSS Support [ecmel]</code> <code>JavaScript(ES6) code snippets [charalampos karypidis]</code> <code>Material Icon Theme [Philipp Kief]</code> <code>PHP Intelephense [Ben Mewburn]</code> <code>Prettier - Code formatter [Prettier]</code> <code>Vue - Official [Vue]</code></p><pre tabindex=0><code>{
+    // 工作台设置
+    &#34;workbench.iconTheme&#34;: &#34;material-icon-theme&#34;, // material-icon-theme 主题
+    &#34;window.zoomLevel&#34;: 1.2, // 默认放大窗口 1.2倍
+    // 编辑器设置
+    &#34;editor.mouseWheelZoom&#34;: true, // 鼠标滚轮缩放
+    &#34;editor.cursorBlinking&#34;: &#34;smooth&#34;, // 启用平滑光标呼吸效果
+    &#34;editor.cursorSmoothCaretAnimation&#34;: &#34;explicit&#34;, // 启用光标平滑动画
+    &#34;editor.formatOnSave&#34;: true, // 启用保存时自动格式化代码
+    &#34;editor.snippetSuggestions&#34;: &#34;inline&#34;, // 优化代码片段建议，插入代码时显示
+    &#34;editor.minimap.enabled&#34;: false, // 禁用缩略图
+    &#34;editor.autoClosingBrackets&#34;: &#34;languageDefined&#34;, // 根据语言定义自动闭合括号
+    &#34;editor.formatOnPaste&#34;: true, // 粘贴时自动格式化
+    // 启用 IntelliSense 自动补全
+    &#34;editor.suggestOnTriggerCharacters&#34;: true, // 启用触发字符时的自动补全
+    &#34;editor.quickSuggestions&#34;: {
+        &#34;other&#34;: true,
+        &#34;comments&#34;: true,
+        &#34;strings&#34;: true
+    }, // 启用代码和字符串的自动补全
+    &#34;editor.parameterHints.enabled&#34;: true, // 启用函数参数提示
+    // 启用代码跳转功能
+    &#34;editor.gotoLocation.multipleDefinitions&#34;: &#34;peek&#34;, // 修改为单独的设置
+    &#34;editor.gotoLocation.multipleImplementations&#34;: &#34;peek&#34;, // 修改为单独的设置
+    &#34;editor.fontFamily&#34;: &#34;&#39;Comic Sans MS&#39;, monospace&#34;, // 默认字体
+    &#34;editor.letterSpacing&#34;: 1, // 字符间距
+    // 自动保存设置
+    &#34;files.autoSave&#34;: &#34;afterDelay&#34;, // 延迟后自动保存文件
+    &#34;files.autoSaveDelay&#34;: 1000, // 自动保存间隔
+    // 安全性设置
+    &#34;security.workspace.trust.untrustedFiles&#34;: &#34;open&#34;, // 对于未信任的工作区文件选择打开
+    // Prettier 代码格式化设置
+    &#34;prettier.tabWidth&#34;: 4, // Prettier 格式化时使用 4 个空格缩进
+    &#34;prettier.singleQuote&#34;: true, // Prettier 使用单引号
+    // Go 扩展的设置（确保你已经安装了 Go 扩展）
+    &#34;go.useLanguageServer&#34;: true, // 启用 gopls 语言服务器
+    &#34;gopls&#34;: {
+        &#34;usePlaceholders&#34;: true, // 在补全函数时插入占位符
+        &#34;staticcheck&#34;: true, // 启用 staticcheck 分析工具
+        &#34;analyses&#34;: {
+            &#34;unusedparams&#34;: true, // 启用未使用参数的检查
+            &#34;shadow&#34;: true // 启用变量遮蔽的检查
+        }
+    },
+    // Go 格式化和代码整理设置
+    &#34;go.formatTool&#34;: &#34;goimports&#34;, // 使用 goimports 格式化代码，并自动整理导入
+    &#34;go.vetOnSave&#34;: &#34;package&#34;, // 保存时运行 go vet 检查，范围为当前包
+    // Linter 设置，使用 GolangCI-Lint 工具
+    &#34;go.lintTool&#34;: &#34;golangci-lint&#34;, // 配置 GolangCI-Lint 作为 Linter
+    &#34;go.lintFlags&#34;: [
+        &#34;--fast&#34; // 启用快速 lint 检查，减少执行时间
+    ],
+    &#34;go.lintOnSave&#34;: &#34;package&#34;, // 保存时自动运行 GolangCI-Lint 对当前包进行检查
+    // Go 扩展的测试设置
+    &#34;go.testOnSave&#34;: true, // 保存时自动运行测试
+    &#34;go.testFlags&#34;: [
+        &#34;-v&#34;
+    ],
+    &#34;[jsonc]&#34;: {
+        &#34;editor.defaultFormatter&#34;: &#34;vscode.json-language-features&#34; // 测试时使用 -v，显示详细信息
+    },
+    // go struct teg
+    &#34;go-struct-tag.cases&#34;: [
+        &#34;snake&#34;,
+        &#34;camel&#34;
+    ],
+    // JavaScript 相关配置
+    &#34;[javascript]&#34;: {
+        &#34;editor.defaultFormatter&#34;: &#34;esbenp.prettier-vscode&#34;, // 使用 Prettier 格式化 JavaScript
+        &#34;editor.formatOnSave&#34;: true, // 保存时自动格式化
+        &#34;editor.suggestOnTriggerCharacters&#34;: true, // 启用触发字符时的自动补全
+        &#34;editor.quickSuggestions&#34;: {
+            &#34;other&#34;: true,
+            &#34;comments&#34;: true,
+            &#34;strings&#34;: true
+        }, // 启用代码和字符串的自动补全
+        &#34;editor.snippetSuggestions&#34;: &#34;inline&#34;, // 显示代码片段建议
+        &#34;editor.parameterHints.enabled&#34;: true // 启用函数参数提示
+    },
+    // CSS 相关配置
+    &#34;[css]&#34;: {
+        &#34;editor.defaultFormatter&#34;: &#34;esbenp.prettier-vscode&#34;, // 使用 Prettier 格式化 CSS
+        &#34;editor.formatOnSave&#34;: true, // 保存时自动格式化
+        &#34;editor.suggestOnTriggerCharacters&#34;: true, // 启用触发字符时的自动补全
+        &#34;editor.quickSuggestions&#34;: {
+            &#34;other&#34;: true,
+            &#34;comments&#34;: true,
+            &#34;strings&#34;: true
+        }, // 启用代码和字符串的自动补全
+        &#34;editor.snippetSuggestions&#34;: &#34;inline&#34;, // 显示代码片段建议
+        &#34;editor.parameterHints.enabled&#34;: true // 启用函数参数提示
+    },
+    // Emmet 配置：使其适用于 JavaScript 和 TypeScript
+    &#34;emmet.includeLanguages&#34;: {
+        &#34;javascript&#34;: &#34;javascriptreact&#34;, // 对 React 使用 Emmet 扩展
+        &#34;typescript&#34;: &#34;typescriptreact&#34; // 对 TypeScript 使用 Emmet 扩展
+    },
+    // 启用自动补全（JS 和 CSS）
+    &#34;javascript.suggest.autoImports&#34;: true, // 启用自动导入建议
+    &#34;javascript.suggest.enabled&#34;: true, // 启用 JS 自动补全
+    &#34;typescript.suggest.autoImports&#34;: true, // 启用 TypeScript 的自动导入建议
+    &#34;typescript.suggest.enabled&#34;: true, // 启用 TypeScript 自动补全
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://rengchi.github.io/tags/%E7%8E%AF%E5%A2%83/>环境</a></li><li><a href=https://rengchi.github.io/tags/windows/>Windows</a></li><li><a href=https://rengchi.github.io/tags/ide/>Ide</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2025 <a href=https://rengchi.github.io/>仍迟</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

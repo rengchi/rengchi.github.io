@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rengchi.github.io/posts/env/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/tags/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/posts/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/ide/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/posts/env/windows/ide/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/windows/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/tags/linux/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
@@ -17,16 +32,7 @@
     <loc>https://rengchi.github.io/posts/env/linux/init/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rengchi.github.io/tags/windows/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://rengchi.github.io/posts/env/windows/init/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rengchi.github.io/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rengchi.github.io/tags/%E7%8E%AF%E5%A2%83/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/posts/tech/</loc>

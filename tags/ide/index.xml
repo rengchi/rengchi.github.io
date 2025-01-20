@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ide on 仍迟</title>
+    <link>https://rengchi.github.io/tags/ide/</link>
+    <description>Recent content in Ide on 仍迟</description>
+    <generator>Hugo -- 0.141.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rengchi.github.io/tags/ide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IDE</title>
+      <link>https://rengchi.github.io/posts/env/windows/ide/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/env/windows/ide/</guid>
+      <description>编辑器配置相关</description>
+    </item>
+  </channel>
+</rss>

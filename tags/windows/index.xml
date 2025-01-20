@@ -6,8 +6,15 @@
     <description>Recent content in Windows on 仍迟</description>
     <generator>Hugo -- 0.141.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rengchi.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IDE</title>
+      <link>https://rengchi.github.io/posts/env/windows/ide/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/env/windows/ide/</guid>
+      <description>编辑器配置相关</description>
+    </item>
     <item>
       <title>Windows 重装相关</title>
       <link>https://rengchi.github.io/posts/env/windows/init/</link>
