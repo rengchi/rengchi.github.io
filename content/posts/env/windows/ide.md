@@ -38,8 +38,7 @@ description: '编辑器配置相关'
     // 启用代码跳转功能
     "editor.gotoLocation.multipleDefinitions": "peek", // 修改为单独的设置
     "editor.gotoLocation.multipleImplementations": "peek", // 修改为单独的设置
-    "editor.fontFamily": "'Comic Sans MS', monospace", // 默认字体
-    "editor.letterSpacing": 1, // 字符间距
+    "editor.fontFamily": "'Cascadia Code', monospace", // 默认字体
     // 自动保存设置
     "files.autoSave": "afterDelay", // 延迟后自动保存文件
     "files.autoSaveDelay": 1000, // 自动保存间隔
