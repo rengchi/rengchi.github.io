@@ -4,7 +4,7 @@
     <title>仍迟</title>
     <link>https://rengchi.github.io/</link>
     <description>Recent content on 仍迟</description>
-    <generator>Hugo -- 0.141.0</generator>
+    <generator>Hugo -- 0.143.1</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rengchi.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -38,16 +38,13 @@
 &lt;h1 id=&#34;裸仓库&#34;&gt;裸仓库&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E5%8D%8F%E8%AE%AE&#34;&gt;服务器上的 Git&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;设置默认分支为 &lt;code&gt;main&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;设置默认分支为 &lt;code&gt;main&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:\&amp;gt; git config --global init.defaultBranch main
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;初始一个测试仓库 &lt;code&gt;test.git&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;初始一个测试仓库 &lt;code&gt;test.git&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:\data\git\repo&amp;gt; git init --bare test.git
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;测试&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;测试&lt;/p&gt;&lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:\data\git\repo&amp;gt; git clone D:/data/git/repo/test.git D:/data/git/repo/test
 Cloning into &amp;#39;D:/data/git/repo/test&amp;#39;...
 warning: You appear to have cloned an empty repository.
