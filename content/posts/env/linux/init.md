@@ -129,7 +129,7 @@ function AddTitle()
     call append (3," * Filename         : ".expand("%:t"))
     call append (4," * Description      : 知之行之，无负今日")
     call append (5," * ******************************************************************/")
-    echohl WarningMsg | echo "Adding copyright Successfully !!" | echohl None
+    echohl WarningMsg | echo "添加成功 !!" | echohl None
 endfunction
 function UpdateTitle()
     normal m'
@@ -139,7 +139,7 @@ function UpdateTitle()
     execute '/* Filename\s*:/s@:.*$@\=": ".expand("%:t")@'
     execute "noh"
     normal 'k
-    echohl WarningMsg | echo "Updating copyright Successfully !!" | echohl None
+    echohl WarningMsg | echo "更新成功 !!" | echohl None
 endfunction
 function TitleDet()
     let n=1
@@ -228,9 +228,9 @@ ln -s /proj/go/bin/* /usr/local/bin/
 ```
 cd /download
 yum install zlib-devel -y
-wget https://www.kernel.org/pub/software/scm/git/git-2.47.1.tar.gz
-tar -zxf git-2.47.1.tar.gz
-cd git-2.47.1
+wget https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.gz
+tar -zxf git-2.48.1.tar.gz
+cd git-2.48.1
 ./configure --prefix=/env/git
 make -j$(nproc)
 make install
@@ -682,25 +682,25 @@ logrotate -f /etc/logrotate.d/openresty
 
 ```
 cd /download
-wget https://download.redis.io/releases/redis-7.4.0.tar.gz
-tar -zxf redis-7.4.0.tar.gz
-cd /download/redis-7.4.0
+wget https://download.redis.io/releases/redis-7.4.1.tar.gz
+tar -zxf redis-7.4.1.tar.gz
+cd /download/redis-7.4.1
 cd deps
 make hiredis lua jemalloc linenoise
 cd ..
 make -j$(nproc)
 make PREFIX=/env/redis install
 ln -s /env/redis/bin/* /usr/local/bin/
-cp /download/redis-7.4.0/redis.conf /fate/redis/redis.conf.bak
-cp /download/redis-7.4.0/redis.conf /fate/redis/redis.conf
+cp /download/redis-7.4.1/redis.conf /fate/redis/redis.conf.bak
+cp /download/redis-7.4.1/redis.conf /fate/redis/redis.conf
 cd /fate/redis
 sed -i '70s/^#\s*//' redis.conf
 sed -i '156s/^#\s*//' redis.conf
 sed -i '156s/\/run/\/daemon\/redis/' redis.conf
 sed -i '157s/^#\s*//' redis.conf
 sed -i '310s/no/yes/' redis.conf
-sed -i '342s/\/var\/run\/redis_6379.pid/\/daemon\/redis\/redis.pid/' redis.conf
-sed -i '356s/""/\/log\/redis\/redis.log/' redis.conf
+sed -i '342s/\/var\/run\/redis_6379.pid/\/daemon\/redis\/redis_6379.pid/' redis.conf
+sed -i '356s/""/\/logs\/redis\/redis.log/' redis.conf
 sed -i '1050s/^# requirepass foobared/requirepass redis/' redis.conf
 sed -i '1085s/^#\s*//' redis.conf
 sed -i '$ a\rename-command FLUSHDB ""\nrename-command FLUSHALL ""' redis.conf
@@ -735,7 +735,7 @@ EXEC=/env/redis/bin/redis-server
 CLIEXEC=/env/redis/bin/redis-cli
 
 # PID 文件路径，用于记录 Redis 服务的进程 ID
-PIDFILE=/daemon/redis/redis.pid
+PIDFILE="/daemon/redis/redis_${REDISPORT}.pid"
 # Redis 配置文件路径
 CONF="/fate/redis/redis.conf"
 # Redis 服务密码
@@ -919,9 +919,9 @@ wget https://archives.boost.io/release/1.77.0/source/boost_1_77_0.tar.bz2
 tar -xjf /third/mysql/boost_1_77_0.tar.bz2 -C /third/mysql/
 yum install openssl-devel rpcgen libtirpc-devel gcc-c++ ncurses-devel cmake libevent-devel lz4-devel libudev-devel bison openldap-devel cyrus-sasl-devel m4 -y
 cd /download
-wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.40.tar.gz
-tar -zxf mysql-8.0.40.tar.gz
-cd /download/mysql-8.0.40/
+wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.41.tar.gz
+tar -zxf mysql-8.0.41.tar.gz
+cd /download/mysql-8.0.41/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=/env/mysql \
@@ -951,7 +951,7 @@ ln -s /env/mysql/bin/* /usr/local/bin
 ## 开机自动启动
 
 ```
-cp /download/mysql-8.0.40/build/scripts/mysqld.service /etc/systemd/system/mysqld.service
+cp /download/mysql-8.0.41/build/scripts/mysqld.service /etc/systemd/system/mysqld.service
 systemctl enable mysqld
 ```
 
