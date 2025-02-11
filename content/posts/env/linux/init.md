@@ -11,27 +11,21 @@ description: '测试服务器环境：Huawei Cloud EulerOS 2.0'
 
 # 准备
 
-> `2222` 是 ssh 新的自定义端口，**_使用了 `sed -i 行数`部分请先查看_**
-
 ```
 #!/bin/bash
 # cls 命令添加
 ln -s /usr/bin/clear /usr/local/bin/cls
 # 防火墙
 systemctl start firewalld.service
+firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --zone=public --add-port=443/tcp --permanent
-firewall-cmd --zone=public --add-port=2222/tcp --permanent
 # 重启
 systemctl restart firewalld
 # 开机启动
 systemctl enable firewalld.service
 # 列表查看
 # firewall-cmd --list-ports
-# ssh
-cd /etc/ssh
-cp sshd_config sshd_config.bak
-sed -i '21s/#Port 22/Port 2222/' sshd_config
 cd /etc
 # 主机名称
 cp hostname hostname.bak
@@ -177,7 +171,7 @@ mkdir /logs/openresty /logs/openresty/proxy_temp /logs/redis /logs/mysql /fate
 mkdir /third/mysql
 mkdir /fate/openresty /fate/openresty/lua /fate/openresty/conf.d /fate/redis /fate/mysql
 mkdir /daemon/openresty /daemon/redis /daemon/mysql
-mkdir /data/mysql /data/mysql/data /data/mysql/mysql-files
+mkdir /data/mysql /data/mysql/data /data/mysql/mysql-files /data/openresty /data/git /data/git/repo
 mkdir /proj/html /proj/go
 chmod 755 /env /fate /data /download /proj
 chmod -R 755 /logs/openresty /daemon /proj/html
@@ -254,6 +248,31 @@ EOF
 ```
 
 ## 扩展
+
+### 自己搭建（不要在线下整，属于个人测试）
+
+> 手动复制到服务器 `/home/git/.ssh/authorized_keys` 中
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-copy-id git@server
+```
+
+```
+git config --global init.defaultBranch main
+git config --global user.email "your_email@example.com"
+git config --global user.name "username"
+useradd -m -s /bin/bash git
+# 密码设置，可选
+passwd git
+
+mkdir -p /home/git/.ssh
+chmod 700 /home/git/.ssh
+chown -R git:git /home/git/.ssh
+chmod 600 /home/git/.ssh/authorized_keys
+chown -R git:git /data/git/repo/test.git
+chmod -R 755 /data/git/repo/test.git
+```
 
 ### gitea
 
@@ -398,7 +417,7 @@ groupadd -r openresty
 useradd -r -g openresty -s /sbin/nologin openresty
 ln -s /env/openresty/bin/openresty /usr/local/bin/
 chmod 755 /env/openresty
-chown -R openresty:openresty /env/openresty
+chown -R openresty:openresty /env/openresty /data/openresty
 chmod 644 /env/openresty/lualib
 chown -R openresty:openresty /env/openresty/lualib/
 chmod -R 644 /env/openresty/lualib/resty
