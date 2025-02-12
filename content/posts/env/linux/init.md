@@ -221,7 +221,7 @@ ln -s /proj/go/bin/* /usr/local/bin/
 
 ```
 cd /download
-yum install zlib-devel -y
+yum install zlib-devel libcurl-devel curl-devel openssl-devel -y
 wget https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.gz
 tar -zxf git-2.48.1.tar.gz
 cd git-2.48.1
@@ -239,6 +239,7 @@ ln -s /env/git/bin/* /usr/local/bin
 cd
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 mv /root/git-completion.bash /etc/bash_completion.d/
+chmod o+r /etc/bash_completion.d/git-completion.bash
 cat >> .bashrc << EOF
 if [ -f /etc/bash_completion.d/git-completion.bash ]; then
 . /etc/bash_completion.d/git-completion.bash
@@ -701,17 +702,17 @@ logrotate -f /etc/logrotate.d/openresty
 
 ```
 cd /download
-wget https://download.redis.io/releases/redis-7.4.1.tar.gz
-tar -zxf redis-7.4.1.tar.gz
-cd /download/redis-7.4.1
+wget https://download.redis.io/releases/redis-7.4.2.tar.gz
+tar -zxf redis-7.4.2.tar.gz
+cd /download/redis-7.4.2
 cd deps
 make hiredis lua jemalloc linenoise
 cd ..
 make -j$(nproc)
 make PREFIX=/env/redis install
 ln -s /env/redis/bin/* /usr/local/bin/
-cp /download/redis-7.4.1/redis.conf /fate/redis/redis.conf.bak
-cp /download/redis-7.4.1/redis.conf /fate/redis/redis.conf
+cp /download/redis-7.4.2/redis.conf /fate/redis/redis.conf.bak
+cp /download/redis-7.4.2/redis.conf /fate/redis/redis.conf
 cd /fate/redis
 sed -i '70s/^#\s*//' redis.conf
 sed -i '156s/^#\s*//' redis.conf
@@ -809,7 +810,7 @@ PONG
 
 # mysql
 
-[官网](https://www.mysql.com/cn/) [下载 8.0.40](https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.40.tar.gz)
+[官网](https://www.mysql.com/cn/) [下载 8.0.41](https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.41.tar.gz)
 
 > `mysql` # chkconfig: - 55 85
 
@@ -989,7 +990,7 @@ cat /logs/mysql/mysql-error.log
 
 ```
 systemctl start mysqld
-mysql -uroot -p    
+mysql -uroot -p
 systemctl restart mysqld
 ```
 
