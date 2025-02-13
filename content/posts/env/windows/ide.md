@@ -47,6 +47,12 @@ description: '编辑器配置相关'
     // Prettier 代码格式化设置
     "prettier.tabWidth": 4, // Prettier 格式化时使用 4 个空格缩进
     "prettier.singleQuote": true, // Prettier 使用单引号
+    "prettier.printWidth": 100, // 每行的最大字符数，超过这个宽度会换行
+    "prettier.semi": false, // 禁用分号
+    "prettier.useTabs": true, // 使用 Tab 缩进
+    "prettier.endOfLine": "auto", // 自动识别换行符类型
+    "prettier.jsxSingleQuote": true, // 在 JSX 中使用单引号
+    "prettier.bracketSameLine": true, // JSX 中的闭合标签放在同一行
     // Go 扩展的设置（确保你已经安装了 Go 扩展）
     "go.useLanguageServer": true, // 启用 gopls 语言服务器
     "gopls": {
@@ -114,6 +120,9 @@ description: '编辑器配置相关'
     "javascript.suggest.autoImports": true, // 启用自动导入建议
     "javascript.suggest.enabled": true, // 启用 JS 自动补全
     "typescript.suggest.autoImports": true, // 启用 TypeScript 的自动导入建议
-    "typescript.suggest.enabled": true, // 启用 TypeScript 自动补全
+    "typescript.suggest.enabled": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }, // 启用 TypeScript 自动补全
 }
 ```
