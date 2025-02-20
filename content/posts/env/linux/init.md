@@ -903,8 +903,9 @@ default_authentication_plugin=caching_sha2_password
 skip-name-resolve # 如果你希望避免 DNS 解析带来的性能开销，并确保所有连接基于 IP 地址，可以启用 skip-name-resolve，但要确保所有权限配置都使用 IP 地址，而不是主机名
 # 读写分离
 # 对于负载较重的系统，设置读写分离，主库处理写操作，从库处理读操作，可以显著提升性能。
-replicate-do-db=db1
-read_only=1   # 设置从库为只读
+# replicate-do-db=db1
+# read_only=1   # 设置从库为只读
+read_only = off
 # 密钥策略
 # validate-password-policy=STRONG
 # validate-password-length=12
