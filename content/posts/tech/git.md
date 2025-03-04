@@ -110,3 +110,16 @@ git commit --amend --no-edit
 ```
 
 这会使用当前的提交信息，直接跳过编辑过程，只修改提交信息。
+
+## .gitmodules
+
+```
+# 一键完成 初始化+更新，可以直接运行
+git submodule update --init
+
+# 更新子模块到其远程仓库的最新提交
+git submodule update --remote
+
+# 更新所有子模块
+git submodule update --init --recursive
+```
