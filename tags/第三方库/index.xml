@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>第三方库 on 仍迟</title>
+    <link>https://rengchi.github.io/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
+    <description>Recent content in 第三方库 on 仍迟</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rengchi.github.io/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第三方库</title>
+      <link>https://rengchi.github.io/posts/tech/3rd-pkg/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/3rd-pkg/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/williammustaffa/jquery.dad.js&#34;&gt;williammustaffa/jquery.dad.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/SortableJS/Sortable&#34;&gt;SortableJS/Sortable&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/craftpip/jquery-confirm&#34;&gt;craftpip/jquery-confirm&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;useBootstrap: false, // 自定义宽度
+boxWidth: &amp;#39;30%&amp;#39;,
+onOpenBefore: function () {
+    this.$content.css(&amp;#39;height&amp;#39;, &amp;#39;500px&amp;#39;); // 自定义高度
+},
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

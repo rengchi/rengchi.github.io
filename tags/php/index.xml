@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Php on 仍迟</title>
+    <link>https://rengchi.github.io/tags/php/</link>
+    <description>Recent content in Php on 仍迟</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rengchi.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP 方法</title>
+      <link>https://rengchi.github.io/posts/tech/php-func/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/php-func/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;json 格式数据获取&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;?php
+
+// 从输入流中读取 JSON 数据
+$inputData = file_get_contents(&amp;#39;php://input&amp;#39;);
+
+// 解析 JSON 数据为 PHP 数组
+$data = json_decode($inputData, true);
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;dd&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function dd() {
+    // 设置响应头，确保正确显示字符编码
+    header(&amp;#39;Content-Type: text/html; charset=UTF-8&amp;#39;);
+    
+    // 获取所有传入的参数
+    $args = func_get_args();
+    
+    echo &amp;#39;&amp;lt;div style=&amp;#34;background-color: #222; padding: 10px;&amp;#34;&amp;gt;&amp;#39;;
+    
+    foreach ($args as $arg) {
+        echo &amp;#39;&amp;lt;div style=&amp;#34;
+                    background-color: #333; 
+                    color: #0f0; 
+                    padding: 10px; 
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    font-size: 14px; 
+                    font-family: monospace;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    overflow: auto;&amp;#34;&amp;gt;&amp;#39;;
+        echo &amp;#39;&amp;lt;pre&amp;gt;&amp;#39;;
+        print_r($arg); // 使用 print_r 以更可读的格式输出
+        echo &amp;#39;&amp;lt;/pre&amp;gt;&amp;#39;;
+        echo &amp;#39;&amp;lt;/div&amp;gt;&amp;#39;;
+    }
+    
+    echo &amp;#39;&amp;lt;/div&amp;gt;&amp;#39;;
+    
+    die; // 终止脚本执行
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;十六进制字符串&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

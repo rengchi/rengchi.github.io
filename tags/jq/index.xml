@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Jq on 仍迟</title>
+    <link>https://rengchi.github.io/tags/jq/</link>
+    <description>Recent content in Jq on 仍迟</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rengchi.github.io/tags/jq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JQuery 方法</title>
+      <link>https://rengchi.github.io/posts/tech/jq-util/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/jq-util/</guid>
+      <description>&lt;h1 id=&#34;拖动&#34;&gt;拖动&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(function ($) {
+    $.fn.draggable = function () {
+        var isDragging = false;
+        var offsetX, offsetY;
+        var $draggingElement;
+        var isDragEvent = false; // 标记是否是拖动操作
+        var dragThreshold = 5;   // 拖动的最小距离阈值，超过该距离就认为是拖动
+
+        function savePosition(element, left, top) {
+            document.cookie = `${element.attr(&amp;#39;id&amp;#39;)}_position=${left},${top};path=/`;
+        }
+
+        function loadPosition(element) {
+            var cookies = document.cookie.split(&amp;#39;; &amp;#39;);
+            var elementId = element.attr(&amp;#39;id&amp;#39;);
+            for (var i = 0; i &amp;lt; cookies.length; i++) {
+                var parts = cookies[i].split(&amp;#39;=&amp;#39;);
+                if (parts[0] === `${elementId}_position`) {
+                    return parts[1].split(&amp;#39;,&amp;#39;).map(Number);
+                }
+            }
+            return null;
+        }
+
+        this.each(function () {
+            var $this = $(this);
+            var position = loadPosition($this);
+            if (position) {
+                $this.css({
+                    position: &amp;#39;fixed&amp;#39;,
+                    left: position[0] + &amp;#39;px&amp;#39;,
+                    top: position[1] + &amp;#39;px&amp;#39;
+                });
+            } else {
+                $this.css(&amp;#39;position&amp;#39;, &amp;#39;fixed&amp;#39;);
+            }
+        });
+
+        this.on(&amp;#39;mousedown&amp;#39;, function (e) {
+            $draggingElement = $(this);
+            var originalPos = $draggingElement.offset();
+
+            $draggingElement.css({
+                left: originalPos.left + &amp;#39;px&amp;#39;,
+                top: originalPos.top + &amp;#39;px&amp;#39;
+            });
+
+            isDragging = true;
+            offsetX = e.clientX - originalPos.left;
+            offsetY = e.clientY - originalPos.top;
+            isDragEvent = false; // 标记拖动开始
+            e.preventDefault(); // 防止文本选择
+        });
+
+        $(document).on(&amp;#39;mousemove&amp;#39;, function (e) {
+            if (isDragging) {
+                var newLeft = e.clientX - offsetX;
+                var newTop = e.clientY - offsetY;
+
+                if (Math.abs(newLeft - $draggingElement.offset().left) &amp;gt; dragThreshold ||
+                    Math.abs(newTop - $draggingElement.offset().top) &amp;gt; dragThreshold) {
+                    isDragEvent = true;
+                }
+
+                $draggingElement.css({ left: newLeft + &amp;#39;px&amp;#39;, top: newTop + &amp;#39;px&amp;#39; });
+                savePosition($draggingElement, newLeft, newTop);
+            }
+        });
+
+        $(document).on(&amp;#39;mouseup&amp;#39;, function () {
+            isDragging = false;
+        });
+
+        this.on(&amp;#39;click&amp;#39;, function (e) {
+            if (isDragEvent) {
+                e.stopImmediatePropagation();
+                return false;
+            }
+        });
+
+        return this;
+    };
+})(jQuery);
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -4,10 +4,239 @@
     <title>🌈技术 on 仍迟</title>
     <link>https://rengchi.github.io/posts/tech/</link>
     <description>Recent content in 🌈技术 on 仍迟</description>
-    <generator>Hugo -- 0.144.2</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rengchi.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JQuery 方法</title>
+      <link>https://rengchi.github.io/posts/tech/jq-util/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/jq-util/</guid>
+      <description>&lt;h1 id=&#34;拖动&#34;&gt;拖动&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(function ($) {
+    $.fn.draggable = function () {
+        var isDragging = false;
+        var offsetX, offsetY;
+        var $draggingElement;
+        var isDragEvent = false; // 标记是否是拖动操作
+        var dragThreshold = 5;   // 拖动的最小距离阈值，超过该距离就认为是拖动
+
+        function savePosition(element, left, top) {
+            document.cookie = `${element.attr(&amp;#39;id&amp;#39;)}_position=${left},${top};path=/`;
+        }
+
+        function loadPosition(element) {
+            var cookies = document.cookie.split(&amp;#39;; &amp;#39;);
+            var elementId = element.attr(&amp;#39;id&amp;#39;);
+            for (var i = 0; i &amp;lt; cookies.length; i++) {
+                var parts = cookies[i].split(&amp;#39;=&amp;#39;);
+                if (parts[0] === `${elementId}_position`) {
+                    return parts[1].split(&amp;#39;,&amp;#39;).map(Number);
+                }
+            }
+            return null;
+        }
+
+        this.each(function () {
+            var $this = $(this);
+            var position = loadPosition($this);
+            if (position) {
+                $this.css({
+                    position: &amp;#39;fixed&amp;#39;,
+                    left: position[0] + &amp;#39;px&amp;#39;,
+                    top: position[1] + &amp;#39;px&amp;#39;
+                });
+            } else {
+                $this.css(&amp;#39;position&amp;#39;, &amp;#39;fixed&amp;#39;);
+            }
+        });
+
+        this.on(&amp;#39;mousedown&amp;#39;, function (e) {
+            $draggingElement = $(this);
+            var originalPos = $draggingElement.offset();
+
+            $draggingElement.css({
+                left: originalPos.left + &amp;#39;px&amp;#39;,
+                top: originalPos.top + &amp;#39;px&amp;#39;
+            });
+
+            isDragging = true;
+            offsetX = e.clientX - originalPos.left;
+            offsetY = e.clientY - originalPos.top;
+            isDragEvent = false; // 标记拖动开始
+            e.preventDefault(); // 防止文本选择
+        });
+
+        $(document).on(&amp;#39;mousemove&amp;#39;, function (e) {
+            if (isDragging) {
+                var newLeft = e.clientX - offsetX;
+                var newTop = e.clientY - offsetY;
+
+                if (Math.abs(newLeft - $draggingElement.offset().left) &amp;gt; dragThreshold ||
+                    Math.abs(newTop - $draggingElement.offset().top) &amp;gt; dragThreshold) {
+                    isDragEvent = true;
+                }
+
+                $draggingElement.css({ left: newLeft + &amp;#39;px&amp;#39;, top: newTop + &amp;#39;px&amp;#39; });
+                savePosition($draggingElement, newLeft, newTop);
+            }
+        });
+
+        $(document).on(&amp;#39;mouseup&amp;#39;, function () {
+            isDragging = false;
+        });
+
+        this.on(&amp;#39;click&amp;#39;, function (e) {
+            if (isDragEvent) {
+                e.stopImmediatePropagation();
+                return false;
+            }
+        });
+
+        return this;
+    };
+})(jQuery);
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>JS 方法</title>
+      <link>https://rengchi.github.io/posts/tech/js-util/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/js-util/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;相差天数&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function calculateDayDifference(deliveryTime) {
+    // 将传入的日期字符串转换为 Date 对象
+    let deliveryDate = new Date(deliveryTime);
+    let currentDate = new Date();
+
+    // 将时间部分归零，以便仅比较日期部分
+    deliveryDate.setHours(0, 0, 0, 0);
+    currentDate.setHours(0, 0, 0, 0);
+
+    // 计算两个日期之间的毫秒级时间差
+    let timeDifference = deliveryDate.getTime() - currentDate.getTime();
+
+    // 将时间差转换为天数，并返回
+    return Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;当前日期&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function formatNumber(num) {
+    return String(num).padStart(2, &amp;#39;0&amp;#39;);
+}
+
+function formatDate(date = new Date(), format = &amp;#39;YYYY-MM-DD HH:mm:ss&amp;#39;) {
+    const replacements = {
+        YYYY: date.getFullYear(),
+        MM: formatNumber(date.getMonth() + 1),
+        DD: formatNumber(date.getDate()),
+        HH: formatNumber(date.getHours()),
+        mm: formatNumber(date.getMinutes()),
+        ss: formatNumber(date.getSeconds())
+    };
+
+    return format.replace(/YYYY|MM|DD|HH|mm|ss/g, match =&amp;gt; replacements[match]);
+}
+
+console.log(formatDate());                    // 默认格式: 2024-03-04 14:30:15
+console.log(formatDate(new Date(), &amp;#39;MM/DD&amp;#39;)); // 03/04
+console.log(formatDate(new Date(), &amp;#39;HH:mm&amp;#39;)); // 14:30
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;复选框选中状态&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PHP 方法</title>
+      <link>https://rengchi.github.io/posts/tech/php-func/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/php-func/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;json 格式数据获取&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;?php
+
+// 从输入流中读取 JSON 数据
+$inputData = file_get_contents(&amp;#39;php://input&amp;#39;);
+
+// 解析 JSON 数据为 PHP 数组
+$data = json_decode($inputData, true);
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;dd&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function dd() {
+    // 设置响应头，确保正确显示字符编码
+    header(&amp;#39;Content-Type: text/html; charset=UTF-8&amp;#39;);
+    
+    // 获取所有传入的参数
+    $args = func_get_args();
+    
+    echo &amp;#39;&amp;lt;div style=&amp;#34;background-color: #222; padding: 10px;&amp;#34;&amp;gt;&amp;#39;;
+    
+    foreach ($args as $arg) {
+        echo &amp;#39;&amp;lt;div style=&amp;#34;
+                    background-color: #333; 
+                    color: #0f0; 
+                    padding: 10px; 
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    font-size: 14px; 
+                    font-family: monospace;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    overflow: auto;&amp;#34;&amp;gt;&amp;#39;;
+        echo &amp;#39;&amp;lt;pre&amp;gt;&amp;#39;;
+        print_r($arg); // 使用 print_r 以更可读的格式输出
+        echo &amp;#39;&amp;lt;/pre&amp;gt;&amp;#39;;
+        echo &amp;#39;&amp;lt;/div&amp;gt;&amp;#39;;
+    }
+    
+    echo &amp;#39;&amp;lt;/div&amp;gt;&amp;#39;;
+    
+    die; // 终止脚本执行
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;十六进制字符串&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>常用 CSS 样式</title>
+      <link>https://rengchi.github.io/posts/tech/css/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/css/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 完全居中对齐 */
+}
+
+.vertical-centered {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* 仅垂直居中 */
+}
+
+.text-ellipsis {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 超出部分省略号显示 */
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>第三方库</title>
+      <link>https://rengchi.github.io/posts/tech/3rd-pkg/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/3rd-pkg/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/williammustaffa/jquery.dad.js&#34;&gt;williammustaffa/jquery.dad.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/SortableJS/Sortable&#34;&gt;SortableJS/Sortable&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/craftpip/jquery-confirm&#34;&gt;craftpip/jquery-confirm&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;useBootstrap: false, // 自定义宽度
+boxWidth: &amp;#39;30%&amp;#39;,
+onOpenBefore: function () {
+    this.$content.css(&amp;#39;height&amp;#39;, &amp;#39;500px&amp;#39;); // 自定义高度
+},
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     <item>
       <title>Git</title>
       <link>https://rengchi.github.io/posts/tech/git/</link>

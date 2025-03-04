@@ -2,13 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rengchi.github.io/posts/env/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <loc>https://rengchi.github.io/posts/tech/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/tags/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/posts/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/css/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/jq/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/posts/tech/jq-util/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/js/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/posts/tech/js-util/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/php/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/posts/tech/php-func/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/posts/tech/css/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/posts/tech/3rd-pkg/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rengchi.github.io/posts/env/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/tags/ide/</loc>
@@ -18,9 +57,6 @@
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/tags/windows/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rengchi.github.io/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/tags/%E7%8E%AF%E5%A2%83/</loc>
@@ -35,19 +71,13 @@
     <loc>https://rengchi.github.io/posts/env/windows/init/</loc>
     <lastmod>2025-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rengchi.github.io/posts/tech/</loc>
+    <loc>https://rengchi.github.io/posts/tech/git/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/tags/git/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rengchi.github.io/posts/tech/git/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://rengchi.github.io/posts/env/windows/dev/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rengchi.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rengchi.github.io/posts/notes/</loc>

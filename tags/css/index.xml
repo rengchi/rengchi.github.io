@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Css on 仍迟</title>
+    <link>https://rengchi.github.io/tags/css/</link>
+    <description>Recent content in Css on 仍迟</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rengchi.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用 CSS 样式</title>
+      <link>https://rengchi.github.io/posts/tech/css/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://rengchi.github.io/posts/tech/css/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 完全居中对齐 */
+}
+
+.vertical-centered {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* 仅垂直居中 */
+}
+
+.text-ellipsis {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 超出部分省略号显示 */
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>
