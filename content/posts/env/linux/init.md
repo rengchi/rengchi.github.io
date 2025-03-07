@@ -61,7 +61,19 @@ set number                  " 显示行号
 set autoindent              " 自动缩进
 set smartindent             " 智能缩进
 " set mouse=a                 " 启用鼠标支持
+" 文本显示设置
+set linebreak               " 不换行断字
+set showmatch               " 高亮匹配括号
+set cursorline              " 突出显示当前行
+set ruler                   " 打开状态栏标尺
+set hidden                  " 允许隐藏未保存的 buffer
+set updatetime=300          " 降低更新延迟，提高性能
 syntax on                   " 开启语法高亮
+
+" 增强剪贴板支持（适用于 macOS/Linux）
+if has('clipboard')
+    set clipboard+=unnamedplus  " 使用系统剪贴板
+endif
 
 " Tab 和缩进设置
 set tabstop=4               " 设置 Tab 为 4 个空格
@@ -77,21 +89,29 @@ set encoding=utf-8
 " 自动加载
 set autoread
 
-" 文本显示设置
-set linebreak               " 不换行断字
-set showmatch               " 高亮匹配括号
-set cursorline              " 突出显示当前行
-set ruler                   " 打开状态栏标尺
-
 " 搜索设置
 set hlsearch                " 搜索时高亮匹配的词
 set incsearch               " 边输入边搜索
 set ignorecase              " 搜索时忽略大小写
 set smartcase               " 当搜索包含大写字母时，搜索区分大小写
 
+" UI 美化
+set laststatus=2            " 总是显示状态栏
+set showcmd                 " 显示输入的命令
+set wildmenu                " 命令模式补全增强
+set wildmode=longest:full,full
+set list                    " 显示空格和制表符
+set listchars=tab:▸\ ,trail:· " 显示特殊字符
+
 " 中文帮助设置
 set helplang=cn             " 设置中文帮助
 set ambiwidth=double        " 设置双字宽显示，防止字符不完整
+
+" 目录浏览优化（增强 netrw）
+let g:netrw_banner = 0      " 关闭 netrw 顶部横幅
+let g:netrw_liststyle = 3   " 使用树状视图
+let g:netrw_browse_split = 4 " 在新标签页打开文件
+let g:netrw_altv = 1        " 竖向分屏
 
 " 备份与撤销文件设置
 set backup                  " 开启备份文件
@@ -106,47 +126,23 @@ nnoremap <leader>r :source $MYVIMRC<cr>      " 刷新配置
 nnoremap <c-d> yyp                          " Ctrl+d 复制本行并粘贴到下一行
 inoremap ;; <Esc>                           " 将 ESC 键映射为两次 ; 键
 nnoremap <leader>q :q<cr>                   " <leader>+q 快速退出 vim
-inoremap <leader>q <Esc>:q<cr>
 nnoremap <leader>s :w<cr>                   " <leader>+s 快速保存
-inoremap <leader>s <Esc>:w<cr>
+
+" 窗口管理
+nnoremap <leader>v :vsplit<cr>               " 垂直分屏
+nnoremap <leader>h :split<cr>                " 水平分屏
+nnoremap <leader>c :close<cr>                " 关闭当前窗口
+nnoremap <leader>o :only<cr>                 " 只保留当前窗口
 
 " 插入模式、正常模式按 Ctrl+u 快速转换为大写
 inoremap <c-u> <esc>viwUea
 nnoremap <c-u> viwUe
 
-" 文件头部签名信息管理
-nmap <F6> ms:call TitleDet() <cr>'s
-function AddTitle()
-    call append (0,"/*********************************************************************")
-    call append (1," * Author           : 仍迟")
-    call append (2," * Create At        : ".strftime("%Y-%m-%d %H:%M"))
-    call append (3," * Filename         : ".expand("%:t"))
-    call append (4," * Description      : 知之行之，无负今日")
-    call append (5," * ******************************************************************/")
-    echohl WarningMsg | echo "添加成功 !!" | echohl None
-endfunction
-function UpdateTitle()
-    normal m'
-    execute '/* Last modified\s*:/s@:.*$@\=strftime(": %Y-%m-%d %H:%M")@'
-    normal ''
-    normal mk
-    execute '/* Filename\s*:/s@:.*$@\=": ".expand("%:t")@'
-    execute "noh"
-    normal 'k
-    echohl WarningMsg | echo "更新成功 !!" | echohl None
-endfunction
-function TitleDet()
-    let n=1
-    while n<8
-       let line = getline(n)
-       if line =~ '^\s*\*\s*Last\smodified\s*:\s*\S*.*$'
-        call UpdateTitle()
-    return
-       endif
-       let n = n+1
-    endwhile
-    call AddTitle()
-endfunction
+" 代码缩进
+nnoremap < <gv
+nnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " 查找与替换
 nnoremap <C-f> /
@@ -349,7 +345,7 @@ server {
     ssl_certificate      /data/openresty/cert/gitea.yourhost.com/fullchain.pem;
     ssl_certificate_key  /data/openresty/cert/gitea.yourhost.com/privkey.pem;
     ssl_protocols TLSv1.2 TLSv1.3;  # 仅支持 TLSv1.2 和 TLSv1.3
-    ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:...';  # 选择安全的加密套件
+    ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384';  # 只使用安全的加密套件
     ssl_prefer_server_ciphers on;  # 强制服务器优先选择加密套件
     ssl_session_cache shared:SSL:1m;
     ssl_session_timeout 5m;
@@ -391,7 +387,6 @@ cd /download/openresty-1.25.3.2
             --pid-path=/daemon/openresty/openresty.pid \
             --with-http_v2_module \
             --with-http_realip_module \
-            --with-http_stub_status_module \
             --with-luajit \
             --with-cc=gcc \
             --with-stream \
@@ -406,11 +401,9 @@ cd /download/openresty-1.25.3.2
             --with-http_geoip_module \
             --with-poll_module \
             --with-ld-opt="-ljemalloc" \
-            --with-http_dav_module \
-            --with-http_flv_module \
             --with-http_mp4_module \
-            --with-http_slice_module \
-            --with-file-aio
+            --with-file-aio \
+            --with-http_random_index_module
 
 gmake -j$(nproc)
 gmake install
@@ -587,20 +580,32 @@ http {
     # lua
     #access_by_lua_file "lua 文件目录";
 
-     add_header X-HTTP-Method-Override ""; # 禁用伪造的方法
-    # 可以增强浏览器的安全性，防止 XSS 攻击和其他安全漏洞
-     add_header X-Content-Type-Options nosniff always; # 防止 MIME 类型嗅探
+    # 禁用伪造的 HTTP 方法，防止绕过安全策略
+    add_header X-HTTP-Method-Override ""; # 禁用伪造的方法
     # 禁用跨站请求伪造（CSRF）
-     add_header Referrer-Policy "no-referrer";
+    add_header Referrer-Policy "no-referrer";# 禁止浏览器发送 `Referer` 头，防止隐私泄露
     # 防止点击劫持，相同域名iframe引用
     # add_header X-Frame-Options SAMEORIGIN;
     add_header X-XSS-Protection "1; mode=block" always; # 防止跨站脚本攻击 (XSS)
     add_header X-Content-Type-Options "nosniff"; # 防止浏览器解读响应的MIME类型
     add_header X-Frame-Options "DENY"; # 防止点击劫持（Clickjacking）
-    add_header Set-Cookie "name=value; SameSite=Strict"; # 防止跨站请求伪造 (CSRF)
+    # 设置 SameSite 属性，防止 CSRF 攻击
+    add_header Set-Cookie "name=value; Path=/; HttpOnly; Secure; SameSite=Strict" always;
     # 启用 Content Security Policy (CSP), 设置 CSP 头以防止外部脚本和资源的加载，从而防止 XSS 攻击
     add_header X-Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self'; frame-ancestors 'none';"; # CSP 防范攻击
-    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self';";
+    # 启用 Content Security Policy (CSP) 防范 XSS 和代码注入攻击
+    # script-src 'self' 'unsafe-inline' https://trusted-scripts.com;
+    add_header Content-Security-Policy "
+        default-src 'self'; 
+        object-src 'none';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'self';
+        upgrade-insecure-requests;" always;
+    # HTTP Strict Transport Security (HSTS)，强制 HTTPS 访问
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
 
     # cache 配置
     proxy_cache_path /logs/openresty/cache levels=1:2 keys_zone=my_cache:10m max_size=1g inactive=60m use_temp_path=off;
@@ -631,6 +636,19 @@ location ~ /\.git {
 # 禁用不必要的 HTTP 方法
 if ($request_method !~ ^(GET|POST|HEAD)$) {
     return 405;
+}
+
+# 允许访问 favicon.ico，且不记录日志
+location = /favicon.ico {
+    root /static;
+    log_not_found off;
+    access_log off;
+}
+
+# 可选：屏蔽所有 .ico 访问日志
+location ~* \.ico$ {
+    log_not_found off;
+    access_log off;
 }
 ```
 
@@ -905,8 +923,8 @@ skip-name-resolve # 如果你希望避免 DNS 解析带来的性能开销，并�
 # 对于负载较重的系统，设置读写分离，主库处理写操作，从库处理读操作，可以显著提升性能。
 # replicate-do-db=db1
 # read_only=1   # 设置从库为只读
-read_only = off
-# 密钥策略
+read_only=off
+#密钥策略
 # validate-password-policy=STRONG
 # validate-password-length=12
 # 禁用符号链接 & 禁用 LOAD DATA LOCAL INFILE 功能
