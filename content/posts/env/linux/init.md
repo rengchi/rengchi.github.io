@@ -95,17 +95,15 @@ set incsearch               " 边输入边搜索
 set ignorecase              " 搜索时忽略大小写
 set smartcase               " 当搜索包含大写字母时，搜索区分大小写
 
+" 中文帮助设置
+set helplang=cn             " 设置中文帮助
+set ambiwidth=double        " 设置双字宽显示，防止字符不完整
+
 " UI 美化
 set laststatus=2            " 总是显示状态栏
 set showcmd                 " 显示输入的命令
 set wildmenu                " 命令模式补全增强
 set wildmode=longest:full,full
-set list                    " 显示空格和制表符
-set listchars=tab:▸\ ,trail:· " 显示特殊字符
-
-" 中文帮助设置
-set helplang=cn             " 设置中文帮助
-set ambiwidth=double        " 设置双字宽显示，防止字符不完整
 
 " 目录浏览优化（增强 netrw）
 let g:netrw_banner = 0      " 关闭 netrw 顶部横幅
