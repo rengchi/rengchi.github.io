@@ -26,6 +26,11 @@ systemctl restart firewalld
 systemctl enable firewalld.service
 # 列表查看
 # firewall-cmd --list-ports
+dd if=/dev/zero of=/swapfile bs=1M count=4096
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo "/swapfile none swap sw 0 0" >> /etc/fstab
 cd /etc
 # 主机名称
 cp hostname hostname.bak
@@ -330,6 +335,10 @@ WantedBy=multi-user.target
 server {
     listen       80;
     server_name  gitea.yourhost.com;
+    
+    access_log /logs/openresty/gitea.access.log;
+    error_log /logs/openresty/gitea.error.log;
+    
     return  301 https://$server_name$request_uri;
 }
 
